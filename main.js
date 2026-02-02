@@ -22,7 +22,12 @@
 // We store the “name” of the current screen as a string.
 // Only one screen should be active at a time.
 let currentScreen = "start"; // "start" | "instr" | "game" | "win" | "lose"
-
+// Game state tracking
+let hearts = 0; // player's heart counter (0-3)
+// SCENES is defined in constants.js (loaded before game files)
+let gameScene = SCENES.INTRO; // tracks which scene/beat of the story we're on
+// Track the previous screen so we can detect when we first enter a screen
+let prevScreen = currentScreen;
 // ------------------------------
 // setup() runs ONCE at the beginning
 // ------------------------------
@@ -47,7 +52,11 @@ function draw() {
   //   game.js          → drawGame()
   //   win.js           → drawWin()
   //   lose.js          → drawLose()
-
+  // Reset hearts and scene only when we *enter* the game screen
+  if (currentScreen === "game" && prevScreen !== "game") {
+    hearts = 0; // ensure hearts start at 0 when game begins
+    gameScene = SCENES.INTRO; // reset to first scene on entry
+  }
   if (currentScreen === "start") drawStart();
   else if (currentScreen === "instr") drawInstr();
   else if (currentScreen === "game") drawGame();
@@ -59,6 +68,8 @@ function draw() {
   // Later in the course you might replace it with:
   // - a switch statement, or
   // - an object/map of screens
+  // Remember current screen for the next frame
+  prevScreen = currentScreen;
 }
 
 // ------------------------------

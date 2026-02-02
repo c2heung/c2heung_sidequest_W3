@@ -1,6 +1,6 @@
 ## Project Title
 
-GBDA302 Week 3 Example 1: Instructions Screen with Back button
+Kitten Adoption Quest - A Branching Story Game
 
 ---
 
@@ -12,7 +12,7 @@ Cheryl Heung, c2heung, 21070019
 
 ## Description
 
-This p5.js project demonstrates a simple multi-screen game structure using a state-based approach. The example includes a start screen, an instructions screen with a back button, a basic game screen, and win/lose outcome screens. The focus is on showing how to separate screens into different files, route input based on the current game state, and design simple UI elements such as buttons and keyboard controls.
+Kitten Adoption Quest is an interactive branching story game built with p5.js where your choices matter! Help a lost kitten find love and safety through six unique narrative paths. Build affection with the kitten through kind choices, and discover different endings based on your decisions. Features a pastel pink aesthetic with an intuitive button-based interface, an emotion system tracked through hearts (0-3), and multiple story branches leading to unique outcomes. Can you find the perfect happy ending?
 
 ---
 
@@ -22,13 +22,16 @@ This p5.js project demonstrates a simple multi-screen game structure using a sta
 - Practice separating code across multiple files for readability and maintenance
 - Implement clickable and keyboard-accessible UI buttons
 - Learn how to route draw(), mousePressed(), and keyPressed() logic based on the active screen
-- Build a basic instructions screen with a functional back button
+- Build a branching narrative system with state tracking and dynamic endings
+- Design responsive button layouts with guaranteed spacing
+- Create engaging story scenes with multiple choice paths
 
 ---
 
 ## Assets
 
-N/A
+p5.js library
+p5.sound library (included)
 
 ---
 

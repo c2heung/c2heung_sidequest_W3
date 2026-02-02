@@ -1,0 +1,22 @@
+// Shared constants used across multiple scripts
+const SCENES = {
+  INTRO: 1,
+  KITTEN: 2,
+  IGNORE: 3,
+  CLAIM: 5,
+  NAME: 6,
+  CUTENAME: 8,
+  FUNNYNAME: 9,
+  FLYER: 7,
+  BACKPACK: 11,
+  CONFESS: 12,
+  SNEAK: 13,
+  SNEAK2: 14,
+  FIND: 15,
+  FINDCUTE: 16,
+  FINDFUNNY: 17,
+  TREATS: 18,
+  TREATS2: 19,
+  RESULT: 4,
+  ENDING: 10,
+};

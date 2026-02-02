@@ -11,24 +11,30 @@
 // drawInstr() is called from main.js
 // only when currentScreen === "instr"
 function drawInstr() {
-  // Light neutral background
-  background(240);
+  // Background - slightly darker pastel pink than start screen
+  background(250, 200, 230);
 
   // ---- Screen title ----
-  fill(0);
+  fill(200, 100, 150);
   textAlign(CENTER, TOP);
-  textSize(36);
-  text("Instructions", width / 2, 80);
+  textSize(48);
+  text("How to Play", width / 2, 60);
 
   // ---- Instruction text ----
-  textSize(18);
+  fill(100, 50, 80);
+  textSize(20);
+  textAlign(CENTER, TOP);
 
-  // \n creates a line break in the text
-  // This is useful for simple multi-line instructions
+  // Game instructions
   const lines =
-    "Press the game button.\n" + "You have a chance to win or lose!";
+    "Your mission: Help a lost kitten find love and safety!\n\n" +
+    "Click the buttons to make choices that affect the story.\n\n" +
+    "❤️ Build your affection with the kitten through your decisions.\n" +
+    "More hearts = Better ending!\n\n" +
+    "Each choice leads to a different adventure.\n" +
+    "Can you find the perfect happy ending?";
 
-  text(lines, width / 2, 160);
+  text(lines, width / 2, 140);
 
   // ---- Back button ----
   // This button lets the player return to the start screen
