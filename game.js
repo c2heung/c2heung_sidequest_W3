@@ -966,93 +966,9 @@ function getSceneName(val) {
 // ------------------------------
 // Allows keyboard-only interaction (accessibility + design)
 function gameKeyPressed() {
-  // LEFT arrow key triggers left choice button
-  if (keyCode === LEFT) {
-    // Scene 1: choice buttons
-    if (gameScene === SCENES.INTRO) {
-      console.log("LEFT arrow pressed - triggering choiceBtn1 (Pet)");
-      hearts = Math.min(hearts + 1, 3);
-      kittenWithPlayer = true;
-      gameScene = SCENES.KITTEN;
-    }
-    // Scene 2: vet/hide buttons
-    else if (gameScene === SCENES.KITTEN && kittenWithPlayer) {
-      console.log("LEFT arrow pressed - triggering vetBtn (Vet)");
-      hearts = Math.min(hearts + 1, 3);
-      gameScene = SCENES.CLAIM;
-    }
-    // Scene 3: find/store buttons
-    else if (gameScene === SCENES.IGNORE) {
-      console.log("LEFT arrow pressed - triggering findBtn (Find)");
-      gameScene = SCENES.FIND;
-    }
-    // Claim scene: claim/found buttons
-    else if (gameScene === SCENES.CLAIM) {
-      console.log("LEFT arrow pressed - triggering claimBtn (Claim)");
-      hearts = Math.min(hearts + 1, 3);
-      lastAction = "claim";
-      gameScene = SCENES.NAME;
-    }
-    // Name scene: cute/funny buttons
-    else if (gameScene === SCENES.NAME) {
-      console.log("LEFT arrow pressed - triggering cuteNameBtn");
-      lastAction = "cute";
-      gameScene = SCENES.CUTENAME;
-    }
-    // Find scene: cute/funny buttons
-    else if (gameScene === SCENES.FIND) {
-      console.log("LEFT arrow pressed - triggering cuteNameBtn for find");
-      lastAction = "findcute";
-      gameScene = SCENES.FINDCUTE;
-    }
-    // Backpack scene: confess/sneak buttons
-    else if (gameScene === SCENES.BACKPACK) {
-      console.log("LEFT arrow pressed - triggering confessBtn");
-      gameScene = SCENES.CONFESS;
-    }
-  }
-  // RIGHT arrow key triggers right choice button
-  else if (keyCode === RIGHT) {
-    // Scene 1: choice buttons
-    if (gameScene === SCENES.INTRO) {
-      console.log("RIGHT arrow pressed - triggering choiceBtn2 (Walk past)");
-      kittenWithPlayer = false;
-      gameScene = SCENES.IGNORE;
-    }
-    // Scene 2: vet/hide buttons
-    else if (gameScene === SCENES.KITTEN && kittenWithPlayer) {
-      console.log("RIGHT arrow pressed - triggering hideBtn (Hide)");
-      gameScene = SCENES.BACKPACK;
-    }
-    // Scene 3: find/store buttons
-    else if (gameScene === SCENES.IGNORE) {
-      console.log("RIGHT arrow pressed - triggering storeBtn (Store)");
-      lastAction = "store";
-      gameScene = SCENES.TREATS;
-    }
-    // Claim scene: claim/found buttons
-    else if (gameScene === SCENES.CLAIM) {
-      console.log("RIGHT arrow pressed - triggering foundBtn (Found)");
-      lastAction = "found";
-      gameScene = SCENES.FLYER;
-    }
-    // Name scene: cute/funny buttons
-    else if (gameScene === SCENES.NAME) {
-      console.log("RIGHT arrow pressed - triggering funnyNameBtn");
-      lastAction = "funny";
-      gameScene = SCENES.FUNNYNAME;
-    }
-    // Find scene: cute/funny buttons
-    else if (gameScene === SCENES.FIND) {
-      console.log("RIGHT arrow pressed - triggering funnyNameBtn for find");
-      lastAction = "findfunny";
-      gameScene = SCENES.FINDFUNNY;
-    }
-    // Backpack scene: confess/sneak buttons
-    else if (gameScene === SCENES.BACKPACK) {
-      console.log("RIGHT arrow pressed - triggering sneakBtn");
-      gameScene = SCENES.SNEAK;
-    }
+  // ENTER key triggers the same behaviour as clicking the button
+  if (keyCode === ENTER) {
+    triggerRandomOutcome();
   }
 }
 
